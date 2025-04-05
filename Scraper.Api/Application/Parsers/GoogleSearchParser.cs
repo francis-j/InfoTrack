@@ -33,10 +33,8 @@ public class GoogleSearchParser(ILogger<GoogleSearchParser> logger) : ISearchPar
         {
             foreach (var descendant in rso.Descendants())
             {
-                if (!descendant.Attributes.Contains("href"))
-                    continue;
-
-                result.Add(descendant.Attributes["href"].Value);
+                if (descendant.Attributes.Contains("href") && descendant.Attributes.Contains("data-ved"))
+                    result.Add(descendant.Attributes["href"].Value);
             }
         }
 

@@ -5,7 +5,7 @@ using Scraper.Application.Parsers;
 
 namespace Scraper.Application;
 
-public static class DependencyInjections
+public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
