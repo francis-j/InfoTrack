@@ -2,12 +2,12 @@
 import {onMounted, ref} from "vue";
 import SearchForm from "../components/home/SearchForm.vue";
 import SearchHistory from "../components/home/SearchHistory.vue";
-import type SearchHistoryItem from "../models/SearchHistoryItem.ts";
+import type SearchModel from "../models/SearchModel.ts";
 import {loadSearchHistory, saveSearchHistory} from "../store/SearchStore.ts";
 
 const keywords = ref("");
 const url = ref("");
-const history = ref<SearchHistoryItem[]>([]);
+const history = ref<SearchModel[]>([]);
 
 onMounted(() => {
   history.value = loadSearchHistory();
